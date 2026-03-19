@@ -6,10 +6,9 @@ COPY package*.json ./
 RUN npm install --omit=dev
 
 COPY src ./src
-COPY data ./data
+RUN mkdir -p /app/data
 
 ENV PORT=3001
 EXPOSE 3001
 
 CMD ["npm", "run", "start"]
-
